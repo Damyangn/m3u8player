@@ -5,7 +5,7 @@
 
 ## 效果预览
 
-https://m3u8player.org
+https://m3u8player.orglicenseUrl
 
 
 ## 部署步骤
