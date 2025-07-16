@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>资源与动态 - M3U8视频播放器</title>
+  <link rel="icon" href="/images/logo.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .hd {
+      width: 100%;
+      height: 50px;
+      background-color: #4c93ff;
+    }
+    .hd .link-list {
+      padding: 0 16px;
+      height: 50px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: center;
+    }
+    .hd .link-list a {
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .hd .link-list a:hover {
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .article-card {
+      border-bottom: 1px solid #ddd;
+      padding: 16px 0;
+    }
+
+    .article-card h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .article-card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .article-card a {
+      text-decoration: none;
+      color: #4c93ff;
+    }
+
+    .article-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<header class="hd">
+  <div class="link-list">
+    <a href="/index.html">首页</a>
+    <a href="/articles.html">资源与动态</a>
+    <a href="/about.html">关于</a>
+    <div style="margin-left:auto;">
+      <a href="/articles.html">中文</a> | <a href="/articles_en.html">English</a>
+    </div>
+  </div>
+</header>
+
+<!-- 面包屑导航 -->
+<div style="max-width:900px; margin:20px auto 10px; font-size:14px;">
+  <a href="/index.html" style="color:#4c93ff; text-decoration:none;">首页</a> / 资源与动态
+</div>
+
+<!-- 正文内容 -->
+<div class="container">
+  <h2>最新动态</h2>
+  <div class="article-card">
+    <h3><a href="#">M3U8播放器 v1.2 发布，支持截图功能</a></h3>
+    <p>2025-07-15 | 新增截图、倍速播放等功能，优化播放性能。</p>
+  </div>
+  <div class="article-card">
+    <h3><a href="#">新增支持 .mp4 文件的播放功能</a></h3>
+    <p>2025-06-30 | 你现在可以直接播放本地或远程 MP4 视频。</p>
+  </div>
+
+  <h2 style="margin-top: 32px;">实用资源</h2>
+  <div class="article-card">
+    <h3><a href="#">10个可测试的M3U8视频链接合集</a></h3>
+    <p>收录了一些公开可用的 m3u8 测试地址，适合调试和教学使用。</p>
+  </div>
+  <div class="article-card">
+    <h3><a href="how-to-find-m3u8.html">如何获取视频的M3U8地址？</a></h3>
+    <p>介绍了通过浏览器抓包或工具提取 M3U8 的方法。</p>
+  </div>
+</div>
+
+</body>
+</html>
