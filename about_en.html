@@ -47,6 +47,21 @@
             margin: 0 auto;
             padding: 24px 16px;
         }
+                .breadcrumb-nav {
+            max-width: 900px;
+            margin: 20px auto 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .breadcrumb-nav a {
+            color: #4c93ff;
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +70,7 @@
 <header class="hd">
   <div class="link-list">
     <a href="/index_en.html">Home</a>
+    <a href="/articles_en.html">Resources&News</a>
     <a href="/about_en.html">About</a>
     <div style="margin-left:auto;">
       <a href="/about.html">中文</a> | <a href="/about_en.html">English</a>
@@ -63,8 +79,8 @@
 </header>
 
 <!-- 面包屑导航 -->
-<div style="max-width:900px; margin:20px auto 10px; font-size:14px;">
-  <a href="/index_en.html" style="color:#4c93ff; text-decoration:none;">Home</a> / About Us
+<div class="breadcrumb-nav">
+  <a href="/index_en.html">Home</a> / About
 </div>
 
 <!-- 正文内容 -->

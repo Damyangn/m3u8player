@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>如何获取视频的M3U8地址？ - M3U8视频播放器</title>
+  <link rel="icon" href="/images/logo.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .hd {
+      width: 100%;
+      height: 50px;
+      background-color: #4c93ff;
+    }
+
+    .hd .link-list {
+      padding: 0 16px;
+      height: 50px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hd .link-list a {
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hd .link-list a:hover {
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .article-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .article-meta {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .article-content {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .breadcrumb {
+      max-width: 900px;
+      margin: 20px auto 10px;
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #4c93ff;
+      text-decoration: none;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .back-link a {
+      color: #4c93ff;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-nav {
+      max-width: 900px;
+      margin: 20px auto 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    .breadcrumb-nav a {
+      color: #4c93ff;
+      text-decoration: none;
+    }
+
+    .breadcrumb-nav a:hover {
+       text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<header class="hd">
+  <div class="link-list">
+    <a href="/index.html">首页</a>
+    <a href="/articles.html">资源与动态</a>
+    <a href="/about.html">关于</a>
+    <div style="margin-left:auto;">
+      <a href="/articles.html">中文</a> | <a href="/articles_en.html">English</a>
+    </div>
+  </div>
+</header>
+
+<!-- 面包屑导航 -->
+<div class="breadcrumb-nav">
+  <a href="/index.html">首页</a> / <a href="/articles.html">资源与动态</a> / 如何获取视频的M3U8地址？
+</div>
+
+<!-- 正文内容 -->
+<div class="container">
+  <div class="article-title">如何获取视频的M3U8地址？</div>
+  <div class="article-meta">发布日期：2025-07-16</div>
+  <div class="article-content">
+    <p>M3U8 是一种常见的视频流媒体格式。如果你想播放某个视频资源，首先需要获取它的 M3U8 链接。</p>
+    <h4>1. 使用浏览器开发者工具</h4>
+    <p>打开网页，按下 <strong>F12</strong>，进入“网络（Network）”面板，播放视频后筛选关键词如 `.m3u8`，即可找到对应地址。</p>
+    <h4>2. 使用嗅探类浏览器插件</h4>
+    <p>如 Video Downloader Professional、Smart Video Downloader 等，支持自动捕获视频地址。</p>
+    <h4>3. 使用抓包工具</h4>
+    <p>如 Charles、Fiddler，可以获取 App 或网页请求中隐藏的播放地址。</p>
+    <p>获取链接后，直接粘贴到本站播放器进行测试和播放。</p>
+  </div>
+
+  <div class="back-link">
+    ← <a href="/articles.html">返回资源与动态列表</a>
+  </div>
+</div>
+
+</body>
+</html>
