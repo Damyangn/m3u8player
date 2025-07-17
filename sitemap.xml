@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://m3u8player.cc/</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/articles.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/about.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/index.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/index_en.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/articles_en.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/how-to-find-m3u8.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://m3u8player.cc/about_en.html</loc>
+  <lastmod>2025-07-17T03:42:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
