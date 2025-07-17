@@ -5,7 +5,6 @@
 
 ## 效果预览
 
-https://m3u8player.orglicenseUrl
 
 
 ## 部署步骤
@@ -23,8 +22,5 @@ https://m3u8player.orglicenseUrl
 
 ## 参考效果
 
-- [m3u8player](https://m3u8player-cm4.pages.dev/)
 
-- [vercel-alpha](https://m3u8player-alpha.vercel.app/)
-
-- [Reprodutor M3U8](https://m3u8player.org/pt/)
+- [Reprodutor M3U8](https://m3u8player.cc)
