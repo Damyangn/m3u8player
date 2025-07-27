@@ -2,253 +2,222 @@
 <html lang="zh-cn">
 
 <head>
-    <title>m3u8播放器</title>
-    <link rel="icon" href="/images/logo.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m3u8播放器</title>
     <meta name="description" content="M3U8Player播放器，基于html+腾讯sdk开发的m3u8在线播放器，实现mp4、m3u8/hls格式视频在线播放">
     <meta name="google-site-verification" content="3PsP_TKbpJSemWt8J19cKWA6KYDrqaLx17duJBYg0rs" />
-    <link rel="preconnect" href="https://cdn.staticfile.org">
-    <link rel="dns-prefetch" href="https://cdn.staticfile.org">
-    <link rel="preload" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" as="style">
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" async defer></script>
+    <link rel="icon" href="/images/logo.ico" type="image/x-icon">
 
-    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 优化后的 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 社交分享样式 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/social-share.js/1.0.16/css/share.min.css">
 
-
-    <link rel="stylesheet" href="https://cdn.staticfile.org/social-share.js/1.0.16/css/share.min.css">
-    <script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js"></script>
-
-
+    <!-- 腾讯云播放器样式 -->
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.min.css" rel="stylesheet" />
-    <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
 
 
- 
-
+    <!-- 页面自定义样式 -->
     <style>
-
-        @media screen and (max-width: 640px){
-            #player-container-id {
-                height: 200px!important;
-            }
+        @media screen and (max-width: 640px) {
+          #player-container-id {
+            height: 200px !important;
+          }
         }
-        
-        html, body{
-            width: 100%;
-            height: 100%;
-            display: block;
+
+        html, body {
+          width: 100%;
+          height: 100%;
+          display: block;
         }
 
         .hd {
-            width: 100%;
-            height: 50px;
-            background-color: #4c93ff;
+          width: 100%;
+          height: 50px;
+          background-color: #4c93ff;
         }
 
         .hd .link-list {
-            padding: 0 16px;
-            height: 50px;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            align-items: center;
-            align-content: center;
+          padding: 0 16px;
+          height: 50px;
+          width: 100%;
+          max-width: 900px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          gap: 30px;
+          align-items: center;
         }
 
         .hd .link-list a {
-            font-size: 16px;
-            color: #fff;
-            text-decoration: none;
-            cursor: pointer;
+          font-size: 16px;
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
         }
 
         .hd .link-list a:hover {
-            font-weight: bold;
+          font-weight: bold;
         }
 
         .main {
-            padding: 16px 16px;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
+          padding: 16px;
+          max-width: 900px;
+          margin: 0 auto;
         }
 
         .main h1 {
-            text-align: center;
-            font-size: 30px;
-            color: #4c93ff;
-            font-weight: 800;
-            margin-bottom: 24px;
+          text-align: center;
+          font-size: 30px;
+          color: #4c93ff;
+          font-weight: 800;
+          margin-bottom: 24px;
         }
 
         .main .form {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 24px;
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 24px;
         }
 
         .main .form input {
-            flex: 1;
-            height: 40px;
-            border-top: 1px solid #4c93ff;
-            border-left: 1px solid #4c93ff;
-            border-bottom: 1px solid #4c93ff;
-            border-right: 0px;
-            padding-left: 10px;
-            border-radius: 6px 0 0 6px; /* 左圆角 */
-        }
-
-        .main .form input:focus {
-            outline: #4c93ff;
+          flex: 1;
+          height: 40px;
+          border: 1px solid #4c93ff;
+          border-right: none;
+          padding-left: 10px;
+          border-radius: 6px 0 0 6px;
         }
 
         .main .form img {
-            margin-left: -4px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
+          margin-left: -4px;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
         }
 
         .main #share {
-            text-align: center;
-            margin-top: 24px;
-            margin-bottom: 24px;
+          text-align: center;
+          margin-top: 24px;
+          margin-bottom: 24px;
         }
 
         .main p {
-            font-size: 15px;
+          font-size: 15px;
         }
 
         .main .alert a {
-            color: #501445;
-            text-decoration: underline;
+          color: #501445;
+          text-decoration: underline;
         }
 
         .main h2 {
-            font-size: 16px;
-            font-weight: bold;
+          font-size: 16px;
+          font-weight: bold;
         }
     </style>
-
-
 </head>
 
 <body>
-
-    <header class="hd">
-        <div class="link-list">
-            <a href="/">首页</a>
-            <a href="/articles.html">资源与动态</a>
-            <a href="/about.html">关于</a>
-            <div style="margin-left:auto;">
-                <a href="/index.html">中文</a> | <a href="/index_en.html">English</a>
-            </div>
+<header class="hd">
+    <div class="link-list">
+        <a href="/">首页</a>
+        <a href="/articles.html">资源与动态</a>
+        <a href="/about.html">关于</a>
+        <div style="margin-left:auto;">
+            <a href="/index.html">中文</a> | <a href="/index_en.html">English</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <div class="main">
-        <h1>m3u8播放器</h1>
+<div class="main">
+    <h1>m3u8播放器</h1>
 
+    <div class="form">
+        <input type="text" id="url" value="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8"
+               placeholder="请输入m3u8播放地址" autocomplete="off">
+        <img src="./images/ic-play.png" onclick="play()" />
+    </div>
 
-        <div class="form">
-            <input type="text" id="url"  value="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/hls/xgplayer-demo.m3u8" placeholder="请输入m3u8播放地址" autocomplete="off">
-            <img src="./images/ic-play.png" onclick="play()"/>
-        </div>
+    <video id="player-container-id" preload="auto" playsinline webkit-playsinline
+           style="width: 100%;min-height:200px; background:#000;"></video>
 
-
-        <video id="player-container-id"  preload="auto" playsinline webkit-playsinline style="width: 100%;min-height:200px; background:#000;">
-        </video> 
-
-
-        <div class="alert alert-success" role="alert">
-            <p>
-                嵌入网站:
-            </p>
-            <p>
-            <pre>&lt;iframe src="https://m3u8player.cc/player.html?url=https://****index.m3u8"&gt;&lt;/iframe&gt;</pre>
-            </p>
-            <p>
-                M3U8Player 是一款 Chrome 浏览器扩展，通过 HTML5 视频和媒体源扩展（MSE）实现 HLS 流媒体客户端功能。它支持 .m3u8 格式的 HTTP Live Streaming 播放，
-                核心原理是将 MPEG-2 传输流及 AAC/MP3 音频实时转码为 ISO BMFF (MP4) 片段，
-                并利用 Web Worker 异步处理转码任务，同时兼容 HLS + fmp4 格式。
-            </p>
-            <h2>什么是m3u8文件?</h2>
-            <p>
-                文件扩展名为 <a href="https://en.wikipedia.org/wiki/M3U#M3U8">M3U8</a> 的文件是一种 UTF-8 编码的音频播放列表文件。它们是纯文本文件，音频和视频播放器都可以用它们来描述媒体文件的位置。
-            <p>
+    <div class="alert alert-success" role="alert">
+        <p>
+            嵌入网站:
+        </p>
+        <p>
+        <pre>&lt;iframe src="https://m3u8player.cc/player.html?url=https://****index.m3u8"&gt;&lt;/iframe&gt;</pre>
+        </p>
+        <p>
+            M3U8Player 是一款 Chrome 浏览器扩展，通过 HTML5 视频和媒体源扩展（MSE）实现 HLS 流媒体客户端功能。它支持 .m3u8 格式的 HTTP Live Streaming 播放，
+            核心原理是将 MPEG-2 传输流及 AAC/MP3 音频实时转码为 ISO BMFF (MP4) 片段，
+            并利用 Web Worker 异步处理转码任务，同时兼容 HLS + fmp4 格式。
+        </p>
+        <h2>什么是m3u8文件?</h2>
+        <p>
+            文件扩展名为 <a href="https://en.wikipedia.org/wiki/M3U#M3U8">M3U8</a> 的文件是一种 UTF-8 编码的音频播放列表文件。它们是纯文本文件，音频和视频播放器都可以用它们来描述媒体文件的位置。
+        <p>
             M3U8文件本质上是一个纯文本格式的播放列表。您可以把它想象成一张“歌单”或“节目单”，它本身并不存储任何实际的音频或视频，而是作为一个索引，指明了媒体文件的存放位置和播放顺序。            <p>
-                无论哪种方式，效果都是一样的：你可以打开文件，快速轻松地开始播放播放列表指向的内容。如果你发现自己想反复听同一首歌，你可以制作一个 M3U8 文件，作为在媒体播放器中播放这些特定曲目的快捷方式。
-            <p>
+        无论哪种方式，效果都是一样的：你可以打开文件，快速轻松地开始播放播放列表指向的内容。如果你发现自己想反复听同一首歌，你可以制作一个 M3U8 文件，作为在媒体播放器中播放这些特定曲目的快捷方式。
+        <p>
             这种格式的应用场景十分灵活：<br/>
             本地媒体管理：您可以在自己的电脑上创建一个M3U8文件，将喜欢的歌曲或一系列视频剪辑整理进去。这样，只需打开这个文件，播放器就能按照您的设定自动播放，无需手动一一点选，对于重复欣赏特定内容非常方便。<br/>
             在线流媒体：在互联网上，M3U8是实现流媒体播放（如网络直播和视频点播）的关键技术。它会指向一系列被切割好的视频小片段的URL地址，播放器会依据这个列表顺序下载并无缝播放，从而带来流畅的在线观看体验。
-            <p>
-                为了精确定位这些媒体资源，M3U8文件支持多种路径格式，包括电脑上的绝对/相对路径和网络上的URL链接。同时，文件中还可以包含以“#”号开头的注释行，用于添加描述信息，方便识别和管理。
-                尽管它最初是为MP3这类音频文件设计的，但如今M3U8已广泛应用于视频领域，并成为许多软件和在线视频平台支持的主流格式。很多<a href="http://m3u8player.cc">播放器</a>和软件都支持M3U8文件格式。
-            </p>
-
-        </div>
-
         <p>
-            <span>"Even if you're driving an old and worn-out tricycle, as long as you keep moving forward, occasionally feeling the breeze—this is happiness."
-                <br />即使开着一辆破三轮车，只要还在前行，偶尔吹点小风，这就是幸福 —— <strong>胡适</strong>
-            </span>
-            <br>
-            <br>
-            <br>
-            <span style="font-size: 14px;">资源来源于网络，如有侵权，请联系客服予以删除！</span>
-            <br>
-
-            <span style="font-size: 14px;">© 2019 - 2025 </span>
- 
-            <p>友情链接：
-                <a href="https://fengyelab.cc">博客</a> |
-                <a href="https://shop.fengyelab.cc">谷歌邮箱购买</a> |
-                <a href="https://m3u8player.cc/">m3u8视频播放器</a>
-            </p>
+            为了精确定位这些媒体资源，M3U8文件支持多种路径格式，包括电脑上的绝对/相对路径和网络上的URL链接。同时，文件中还可以包含以“#”号开头的注释行，用于添加描述信息，方便识别和管理。
+            尽管它最初是为MP3这类音频文件设计的，但如今M3U8已广泛应用于视频领域，并成为许多软件和在线视频平台支持的主流格式。很多<a href="http://m3u8player.cc">播放器</a>和软件都支持M3U8文件格式。
         </p>
-
     </div>
- 
 
- 
+    <p>
+      <span>"Even if you're driving an old and worn-out tricycle, as long as you keep moving forward, occasionally feeling the breeze—this is happiness."
+        <br />即使开着一辆破三轮车，只要还在前行，偶尔吹点小风，这就是幸福 —— <strong>胡适</strong>
+      </span>
+        <br><br>
+        <span style="font-size: 14px;">资源来源于网络，如有侵权，请联系客服予以删除！</span><br>
+        <span style="font-size: 14px;">© 2019 - 2025 </span>
 
-    <script>
+    <p>友情链接：
+        <a href="https://fengyelab.cc">博客</a> |
+        <a href="https://shop.fengyelab.cc">谷歌邮箱购买</a> |
+        <a href="https://m3u8player.cc/">m3u8视频播放器</a>
+    </p>
+    </p>
+</div>
 
-        
-        var player = undefined;
+<!-- jQuery -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        function play() {
-            
-            let url = $("#url").val()
+<!-- 社交分享 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-            if(player === undefined) {
-                player = TCPlayer('player-container-id', {
-                sources: [{
-                    src: url,
-                }],
-                // licenseUrl需自己去腾讯云申请
-                licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1307773669_1/v_cube.license',
-            }); 
-            }
+<!-- 腾讯云播放器 SDK -->
+<script src="https://web.sdk.qcloud.com/player/tcplayer/release/v5.1.0/tcplayer.v5.1.0.min.js"></script>
 
+<!-- 播放功能脚本 -->
+<script>
+    var player;
 
-            player.pause();
-            console.log(url)
-            player.src(url); // url 播放地址
-        }
+    function play() {
+      let url = $("#url").val();
+      if (!player) {
+        player = TCPlayer('player-container-id', {
+          sources: [{ src: url }],
+          licenseUrl: 'https://license.vod2.myqcloud.com/license/v2/1307773669_1/v_cube.license',
+        });
+      }
 
-    </script>
-
+      player.pause();
+      console.log(url);
+      player.src(url);
+    }
+</script>
 </body>
 
 </html>
