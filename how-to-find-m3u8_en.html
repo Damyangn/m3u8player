@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Get the M3U8 URL of a Video? - M3U8 Video Player</title>
+  <link rel="icon" href="/images/logo.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .hd {
+      width: 100%;
+      height: 50px;
+      background-color: #4c93ff;
+    }
+
+    .hd .link-list {
+      padding: 0 16px;
+      height: 50px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hd .link-list a {
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hd .link-list a:hover {
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .article-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .article-meta {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .article-content {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .breadcrumb {
+      max-width: 900px;
+      margin: 20px auto 10px;
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #4c93ff;
+      text-decoration: none;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .back-link a {
+      color: #4c93ff;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-nav {
+      max-width: 900px;
+      margin: 20px auto 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    .breadcrumb-nav a {
+      color: #4c93ff;
+      text-decoration: none;
+    }
+
+    .breadcrumb-nav a:hover {
+       text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Navigation -->
+<header class="hd">
+  <div class="link-list">
+    <a href="/index.html">Home</a>
+    <a href="/articles_en.html">Resources & Updates</a>
+    <a href="/about.html">About</a>
+    <div style="margin-left:auto;">
+      <a href="/articles.html">中文</a> | <a href="/articles_en.html">English</a>
+    </div>
+  </div>
+</header>
+
+<!-- Breadcrumb Navigation -->
+<div class="breadcrumb-nav">
+  <a href="/index.html">Home</a> / <a href="/articles_en.html">Resources & Updates</a> / How to Get the M3U8 URL of a Video?
+</div>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="article-title">How to Get the M3U8 URL of a Video?</div>
+  <div class="article-meta">Published: 2025-07-16</div>
+  <div class="article-content">
+    <p>M3U8 is a common format for video streaming. If you want to play a video resource, you first need to get its M3U8 link.</p>
+    <h4>1. Use Browser Developer Tools</h4>
+    <p>Open the webpage, press <strong>F12</strong> to enter the "Network" tab. Then play the video and filter by keywords like <code>.m3u8</code> to find the corresponding URL.</p>
+    <h4>2. Use Sniffing Browser Extensions</h4>
+    <p>Tools like Video Downloader Professional, Smart Video Downloader, etc., can automatically detect and capture video URLs.</p>
+    <h4>3. Use Packet Capture Tools</h4>
+    <p>Tools like Charles or Fiddler can capture hidden video playback URLs in app or webpage requests.</p>
+    <p>After obtaining the link, paste it into our player to test and watch.</p>
+  </div>
+
+  <div class="back-link">
+    ← <a href="/articles_en.html">Back to Resources & Updates</a>
+  </div>
+</div>
+
+</body>
+</html>
